@@ -20,7 +20,7 @@ public class FileBrowserActivity extends Activity implements
         setContentView(R.layout.activity_file_browser_acitivity);
         initView();
 
-        //跟目录
+        //根目录
         rootPath = getIntent().getStringExtra("rootPath");
         //指定文件夹
         filePath = getIntent().getStringExtra("path");
