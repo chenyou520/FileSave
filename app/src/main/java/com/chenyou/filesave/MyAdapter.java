@@ -77,6 +77,7 @@ public class MyAdapter extends BaseAdapter implements View.OnClickListener, Adap
      */
     private void getFileDir(String filePath) {
         File file = new File(filePath);
+
         File[] files = file.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {

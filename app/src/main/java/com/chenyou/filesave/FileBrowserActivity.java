@@ -64,6 +64,7 @@ public class FileBrowserActivity extends Activity implements
             case R.id.btnSure:
                 finish();
                 break;
+
             case R.id.btnCancel:
                 filePath ="";
                 finish();
@@ -74,5 +75,4 @@ public class FileBrowserActivity extends Activity implements
 
         }
     }
-
 }

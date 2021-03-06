@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Locale;
 
 public class MainActivity extends Activity {
     public static final int FILE_RESULT_CODE = 1;
@@ -47,6 +46,9 @@ public class MainActivity extends Activity {
         });
     }
 
+    /**
+     * 打开文件浏览器
+     */
     private void openBrowser() {
         rootPath = System.getenv("SECONDARY_STORAGE");
         if (rootPath == null) {
@@ -63,6 +65,9 @@ public class MainActivity extends Activity {
         }
     }
 
+    /**
+     * 打开文件浏览器sd
+     */
     private void openBrowser1() {
         rootPath = getSdcardPath();
         if (rootPath == null || rootPath.isEmpty()) {
@@ -74,6 +79,10 @@ public class MainActivity extends Activity {
         startActivityForResult(intent, FILE_RESULT_CODE);
     }
 
+    /**
+     * 获取SDcard路径
+     * @return
+     */
     public String getSdcardPath() {
         String sdcardPath = "";
         String[] pathArr = null;
@@ -94,6 +103,12 @@ public class MainActivity extends Activity {
         return sdcardPath;
     }
 
+    /**
+     * 返回的结果
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (FILE_RESULT_CODE == requestCode) {
